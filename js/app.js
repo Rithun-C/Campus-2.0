@@ -1,7 +1,7 @@
 // app.js - Core map functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize map centered on your campus coordinates
-    const map = L.map('map').setView([12.9336019,77.6923996], 17);
+    const map = L.map('map').setView([12.9342851,77.6917957], 17);
     
     // Add OpenStreetMap tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

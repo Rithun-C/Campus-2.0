@@ -9,7 +9,7 @@ let currentRoute = null;
 function initLocationTracking(map) {
     if ('geolocation' in navigator) {
         // Create marker for user location
-        const userMarker = L.marker([0, 0]).addTo(map);
+        const userMarker = L.marker([12.9342851,77.6917957]).addTo(map);
         window.userMarker = userMarker;
         
         // Start continuous location tracking
@@ -29,8 +29,9 @@ function updateUserLocation(position, map, userMarker) {
     userPosition = [latitude, longitude];
     
     // Update marker position
-    userMarker.setLatLng(userPosition);
-    
+    if(!userMarker) {
+        userMarker.setLatLng(userPosition);
+    }
     // If this is the first position update, center map
     if (!window.initialPositionSet) {
         map.setView(userPosition, 17);
